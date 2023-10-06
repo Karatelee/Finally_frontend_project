@@ -2,6 +2,7 @@ import cartService from "@/utils/cart";
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import axios from "axios";
+import "../scss/styles.scss"
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -59,7 +60,9 @@ const Cart = () => {
           <ul>
             {cart.map((dish) => (
               <li key={dish.id}>
+                <img className="dish-image" src={dish.image} alt={dish.name} /> 
                 <p>{dish.name}</p>
+                
                 <p>price: {dish.price}$</p>
                 <button onClick={() => addQuantity(dish)}>+</button>
                 <button onClick={() => subtractQuantity(dish)}>-</button>

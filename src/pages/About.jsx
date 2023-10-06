@@ -1,16 +1,30 @@
 import Navbar from "@/components/Navbar";
-import { ReactComponent as Bricks } from "bootstrap-icons/icons/bricks.svg";
-import { ReactComponent as BagFill } from "bootstrap-icons/icons/bag-fill.svg";
 import React from "react";
+import logoImage from '@/images/logo.png'
+
+
 const About = () => {
   return (
     <>
-      <Navbar />
-      <h1>About</h1>
-      <Bricks />
-      <BagFill />
+      <div className="containerStyle">
+        <div className="header">
+          <div className="header-line">
+            <div className="header-logo">
+              <img src={logoImage} alt="" />
+            </div>
+            <Navbar />
+          </div>
+        </div>
+        <div className="card">
+          <h1>Welcome to Our Website</h1>
+          <p>
+            My phone:+77008388346
+          </p>
+        </div>
+      </div>
     </>
   );
 };
+
 
 export default About;

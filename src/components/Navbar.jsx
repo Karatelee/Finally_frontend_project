@@ -1,33 +1,39 @@
 import { Link } from "react-router-dom";
+// import "../scss/styles.scss"
 
 const Navbar = () => {
   const routes = [
-    {
-      path: "/",
-      title: "Home",
-    },
-    {
-      path: "/about",
-      title: "About",
-    },
-    {
-      path: "/dishes",
-      title: "Dishes",
-    },
-    {
-      path: "/cart",
-      title: "Cart",
-    }
+    <div className='nav'>
+            <a className='nav-item' href="/">HOME</a>
+            <a className='nav-item' href="/dishes">MENU</a>
+            <a className='nav-item' href="/about">ABOUT US</a>
+            <a className='nav-item' href="/cart">CART</a>
+            {/* <a className='nav-item' href="/register">Register</a> */}
+            {/* <a className='nav-item' href="/login">Login</a> */}
+          </div>
   ];
 
   return (
+
     <>
-      <nav>
+    <div >
+            <a className='nav-item' href="/">HOME</a>
+            <a className='nav-item' href="/dishes">MENU</a>
+            <a className='nav-item' href="/about">ABOUT US</a>
+            <a className='nav-item' href="/cart">CART</a>
+            {/* <a className='nav-item' href="/register">Register</a> 
+            /* <a className='nav-item' href="/login">Login</a> */}
+          </div>
+          <nav>
         <ul>
           {routes.map((route, idx) => {
             return (
               <li key={idx}>
-                <Link to={route.path}>{route.title}</Link>
+                {route.path === "/login" || route.path === "/register" ? (
+                  <Link to={route.path}>{route.title}</Link>
+                ) : (
+                  <Link to={route.path}>{route.title}</Link>
+                )}
               </li>
             );
           })}
@@ -36,5 +42,6 @@ const Navbar = () => {
     </>
   );
 };
+
 
 export default Navbar;
